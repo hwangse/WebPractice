@@ -1,0 +1,32 @@
+body.white{
+	background: white;
+	color: black;
+}
+body.black{
+	background: black;
+	color: white;
+}
+header{
+	border-bottom: 2px solid gray;
+	padding : 20px;
+}
+nav{
+	border-right: 2px solid gray;
+	float : left;
+	width : 200px;
+	height : 600px;
+}
+article{
+	float : left;
+	padding : 50px 0 0 50px;
+}
+h2{
+	color : lightblue;
+}
+#just_4_prac{
+	float : right;
+	padding-top : 10px;
+}
+ol{
+	list-style: none;
+}
