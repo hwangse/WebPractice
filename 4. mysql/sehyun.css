@@ -34,3 +34,9 @@ header img{
 	height : 100px;
 	float : right;
 }
+@media screen and (min-width: 500px){
+	article {
+		float : left;
+		width : 200px;
+	}
+}
