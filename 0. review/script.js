@@ -1,9 +1,9 @@
-var1=document.getElementById('wbtn');
-var1.addEventListener('click',function() {
-	document.getElementById('this_is_target_haha').className='white';
+wbtn=document.getElementById('wbtn');
+wbtn.addEventListener('click',function(){
+	document.getElementById('target').className='white';
 })
 
-var2=document.getElementById('bbtn');
-var2.addEventListener('click',function(){
-	document.getElementById('this_is_target_haha').className='black';
+bbtn=document.getElementById('bbtn');
+bbtn.addEventListener('click',function(){
+	document.getElementById('target').className='black';
 })
