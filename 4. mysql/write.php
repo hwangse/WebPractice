@@ -43,11 +43,34 @@
 			작성자 : <input type="text" name="author">
 		</p>
 		<p>
-			본문 : <textarea name="description"></textarea>
+			본문 : <textarea name="description" id="description" cols="50" rows="4"></textarea>
 		</p>
-		<input type="submit">
+		
+	
+	<p>
+		<script>
+	  UPLOADCARE_PUBLIC_KEY = 'd4bbf73f96ca8a8f1902';
+	  UPLOADCARE_IMAGES_ONLY = true;
+	</script>
+
+	<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+	<input
+	  type="hidden"
+	  role="uploadcare-uploader"
+	  name="content"
+	  data-image-shrink="null" />
+	  <input type="submit">
+	</p>
 	</form>
 </article>
+	<script>
+		var singleWidget=uploadcare.SingleWidget('[role=uploadcare-uploader]');
+		singleWidget.onUploadComplete(function(info){
+			document.getElementById('description').value = document.getElementById('description').value+'<img src="'+info.cdnUrl+'">';
+		});
+	</script>
+
 
 </body>
 </html>

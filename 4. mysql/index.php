@@ -34,6 +34,9 @@
 	</nav>
 	<script type="text/javascript" src="script.js">
 	</script>
+
+	
+	  
 <article>
 	<?php
 	 if(empty($_GET['id'])===false){
