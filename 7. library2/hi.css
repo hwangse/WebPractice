@@ -1,0 +1,8 @@
+body.white{
+	background: white;
+	color: black;
+}
+body.black{
+	background: black;
+	color: white;
+}
