@@ -12,33 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>생활코딩</title>
-	<link rel="stylesheet" type="text/css" href="hi.css"/>
+	<link rel="stylesheet" type="text/css" href="sehyun.css"/>
 	<link href="bootstrap-3.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body id='target'> <!-- document content -->
-	<header>
-		<img src="https://t1.daumcdn.net/cfile/tistory/990A06505C5032700E" alt='황세로고'>
+	<div class='container'>
+		<header class="jumbotron text-center">
+		<img src="https://t1.daumcdn.net/cfile/tistory/990A06505C5032700E" alt='황세로고' class="img-circle" id="logo">
 		<h1><a href="index.php">JavaScript</a></h1>
 		
 	</header>
 	<div class="row">
 		<nav class="col-md-3">
-			<ol>
+			<ol class="list-group">
 				<?php
 				while($row=mysqli_fetch_assoc($result)){
-						echo '<li><a href="index.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+						echo '<li class="list-group-item"><a href="index.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
 					}
 				?>
 			</ol>
 		</nav>
 
 		<div class="col-md-9">
-			<div id="just_4_prac">
-			<input type = "button" value = "white" id='wbtn'/>
-			<input type = "button" value = "black" id='bbtn'/>
-			<a href="write.php">write!</a>
-		</div>	
-
+	
 		<article>
 			<?php
 			 if(empty($_GET['id'])===false){
@@ -52,8 +48,19 @@
 			 	 }
 			?>
 		</article>
+		<hr>
+			<div id="just_4_prac">
+			<div class="btn-group" role="group" aria-label="Basic example">
+			<input type = "button" value = "white" id='wbtn' class="btn btn-primary btn-lg">
+			<input type = "button" value = "black" id='bbtn' class="btn btn-primary btn-lg">
+			</div>
+			<a href="write.php" class="btn btn-success btn-lg">write!</a>
+		</div>	
+
 		</div>
 	</div>
+	</div>
+	
 
 	
 
