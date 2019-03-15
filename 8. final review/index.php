@@ -17,6 +17,44 @@ $config=array(
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+	header{
+			 border-bottom: 1px solid gray;
+	 		 padding-left: 20px;
+	   		 padding-bottom: 20px;
+	   		 text-align: left;
+		}
+
+	body{
+		margin:0;
+	}
+	body.black{
+		background : black;
+		color:white;
+	}
+	body.white{
+		background: white;
+		color:black;
+	}
+	nav{
+		border-right : 1px solid gray;
+		width : 200px;
+		float : left;
+		height : 600px;
+
+	}
+	#content{
+		width : 500px;
+		padding-left : 20px;
+		float : left;
+
+	}
+	ol{
+		list-style: none;
+		line-height: 30px;
+	}
+
+	</style>
 </head>
 <body>
 	<header>
@@ -35,7 +73,8 @@ $config=array(
 			?>
 		</ol>
 	</nav>
-	<article>
+	<div id="content">
+		<article>
 		<?php
 			$id=mysqli_real_escape_string($conn,$_GET['id']);
 			$sql = "SELECT topic.id,topic.title,topic.description,user.name,topic.created  FROM topic LEFT JOIN user ON topic.author=user.id WHERE topic.id=".$id;
@@ -46,8 +85,11 @@ $config=array(
 		<h2><?=htmlspecialchars($row['title'])?></h2>
 		<div><?=$row['created']?> | <?=htmlspecialchars($row['name'])?></div>
 		<div><p><?=htmlspecialchars($row['description'])?></p></div>
-	
 	</article>
+	<input type=button value="white"> 
+	<input type=button value="black"> 
+	</div>
+	
 </body>
 </html>
 
