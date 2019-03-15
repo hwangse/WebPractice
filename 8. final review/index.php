@@ -16,6 +16,16 @@
 
 
 	while($row=mysqli_fetch_assoc($result)){
-		echo '<li class="list-group-item"><a href="index.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+		echo '<a href="index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a><br/>';
 	}
+
+	$id=$_GET['id'];
+	$sql = "SELECT topic.id,topic.title,topic.description,user.name,topic.created  FROM topic LEFT JOIN user ON topic.author=user.id WHERE topic.id=".$id;
+	$result=mysqli_query($conn,$sql);
+	$row=mysqli_fetch_assoc($result);
+	echo htmlspecialchars($row['title']).'<br/>';
+	echo htmlspecialchars($row['description']).'<br/>';
+	echo $row['created'].'<br/>';
+	echo $row['name'].'<br/>';
+
 ?>
