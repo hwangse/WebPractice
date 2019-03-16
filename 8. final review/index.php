@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $config=array(
 		"host" => "localhost",
 		"duser" => "root",
@@ -16,7 +16,7 @@ $config=array(
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>hi</title>
 	<style type="text/css">
 	header{
 			 border-bottom: 1px solid gray;
