@@ -23,6 +23,7 @@ $config=array(
 	 		 padding-left: 20px;
 	   		 padding-bottom: 20px;
 	   		 text-align: left;
+			padding : 20px;
 		}
 
 	body{
