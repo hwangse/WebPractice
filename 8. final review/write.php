@@ -89,22 +89,24 @@ $config=array(
 
 	<div id="content">
 		<article>
-		<?php
-			if(!empty($_GET['id'])){
-			$id=mysqli_real_escape_string($conn,$_GET['id']);
-			
-			$sql = "SELECT topic.id,topic.title,topic.description,user.name,topic.created  FROM topic LEFT JOIN user ON topic.author=user.id WHERE topic.id=".$id;
-			$result=mysqli_query($conn,$sql);
-			$row=mysqli_fetch_assoc($result);
-		?>
-	
-		<h2><?=htmlspecialchars($row['title'])?></h2>
-		<div><?=$row['created']?> | <?=htmlspecialchars($row['name'])?></div>
-		<div><p><?=htmlspecialchars($row['description'])?></p></div>
-		<?php
-			}
-		?>
-	</article>
+			<form action="process.php" method="post">
+				<p>
+				<label for="title">제목 : </label>
+				<input type="text" name="title" id="title">
+			</p>
+			<p>
+				<label for="author">작성자 : </label>
+				<input type="text" name="author" id="author">
+			</p>
+			<p>
+				<label for="description">본문 : </label>
+				<textarea id="description" name="description" rows="8" cols="40"></textarea>
+			</p>
+			<p>
+				<input type="submit" name="" value="submit">
+			</p>
+			</form>
+		</article>
 
 	<div id="buttons">
 		<input type=button value="white" onclick="document.getElementById('body').className='white'"> 
