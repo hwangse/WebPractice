@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $config=array(
 		"host" => "localhost",
 		"duser" => "root",
@@ -16,14 +16,13 @@ $config=array(
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hi</title>
+	<title></title>
 	<style type="text/css">
 	header{
 			 border-bottom: 1px solid gray;
 	 		 padding-left: 20px;
 	   		 padding-bottom: 20px;
 	   		 text-align: left;
-			padding : 20px;
 		}
 
 	body{
@@ -54,10 +53,18 @@ $config=array(
 		list-style: none;
 		line-height: 30px;
 	}
+	nav ol li a{
+		color : pink;
+		text-decoration: none;
+    	transition: color 0.5s ease-in-out;
+	}
+	nav ol li a:hover{
+		color:#4ff;
+	}
 
 	</style>
 </head>
-<body>
+<body id="body">
 	<header>
 		<h1>생활코딩 JavaScript</h1>
 	</header>
@@ -77,18 +84,21 @@ $config=array(
 	<div id="content">
 		<article>
 		<?php
+			if(!empty($_GET['id'])){
 			$id=mysqli_real_escape_string($conn,$_GET['id']);
+			
 			$sql = "SELECT topic.id,topic.title,topic.description,user.name,topic.created  FROM topic LEFT JOIN user ON topic.author=user.id WHERE topic.id=".$id;
 			$result=mysqli_query($conn,$sql);
 			$row=mysqli_fetch_assoc($result);
+		}
 		?>
 	
 		<h2><?=htmlspecialchars($row['title'])?></h2>
 		<div><?=$row['created']?> | <?=htmlspecialchars($row['name'])?></div>
 		<div><p><?=htmlspecialchars($row['description'])?></p></div>
 	</article>
-	<input type=button value="white"> 
-	<input type=button value="black"> 
+	<input type=button value="white" onclick="document.getElementById('body').className='white'"> 
+	<input type=button value="black" onclick="document.getElementById('body').className='black'"> 
 	</div>
 	
 </body>
